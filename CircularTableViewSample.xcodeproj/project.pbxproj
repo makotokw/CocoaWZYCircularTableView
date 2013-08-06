@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F860B4B17B0D35300585265 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B4A17B0D35300585265 /* UIKit.framework */; };
+		8F860B4D17B0D35300585265 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B4C17B0D35300585265 /* Foundation.framework */; };
+		8F860B4F17B0D35300585265 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B4E17B0D35300585265 /* CoreGraphics.framework */; };
+		8F860B5517B0D35300585265 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F860B5317B0D35300585265 /* InfoPlist.strings */; };
+		8F860B5717B0D35300585265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B5617B0D35300585265 /* main.m */; };
+		8F860B5B17B0D35300585265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B5A17B0D35300585265 /* AppDelegate.m */; };
+		8F860B5D17B0D35300585265 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F860B5C17B0D35300585265 /* Default.png */; };
+		8F860B5F17B0D35300585265 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F860B5E17B0D35300585265 /* Default@2x.png */; };
+		8F860B6117B0D35300585265 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F860B6017B0D35300585265 /* Default-568h@2x.png */; };
+		8F860B6417B0D35300585265 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F860B6217B0D35300585265 /* MainStoryboard_iPhone.storyboard */; };
+		8F860B6A17B0D35300585265 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B6917B0D35300585265 /* ViewController.m */; };
+		8F860B7717B0D39E00585265 /* WZCircularTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7117B0D39E00585265 /* WZCircularTableView.m */; };
+		8F860B7817B0D39E00585265 /* WZCircularTableViewInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7317B0D39E00585265 /* WZCircularTableViewInterceptor.m */; };
+		8F860B7917B0D39E00585265 /* WZCircularTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7417B0D39E00585265 /* WZCircularTableCell.m */; };
+		8F860B7B17B0D48600585265 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B7A17B0D48600585265 /* QuartzCore.framework */; };
+		8F860B7E17B0D4DA00585265 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7D17B0D4DA00585265 /* TableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8F860B4717B0D35300585265 /* CircularTableViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircularTableViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F860B4A17B0D35300585265 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8F860B4C17B0D35300585265 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8F860B4E17B0D35300585265 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8F860B5217B0D35300585265 /* CircularTableViewSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CircularTableViewSample-Info.plist"; sourceTree = "<group>"; };
+		8F860B5417B0D35300585265 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8F860B5617B0D35300585265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F860B5817B0D35300585265 /* CircularTableViewSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CircularTableViewSample-Prefix.pch"; sourceTree = "<group>"; };
+		8F860B5917B0D35300585265 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8F860B5A17B0D35300585265 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8F860B5C17B0D35300585265 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		8F860B5E17B0D35300585265 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		8F860B6017B0D35300585265 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8F860B6317B0D35300585265 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		8F860B6817B0D35300585265 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8F860B6917B0D35300585265 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8F860B7117B0D39E00585265 /* WZCircularTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZCircularTableView.m; path = Classes/WZCircularTableView.m; sourceTree = "<group>"; };
+		8F860B7217B0D39E00585265 /* WZCircularTableViewInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZCircularTableViewInterceptor.h; path = Classes/WZCircularTableViewInterceptor.h; sourceTree = "<group>"; };
+		8F860B7317B0D39E00585265 /* WZCircularTableViewInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZCircularTableViewInterceptor.m; path = Classes/WZCircularTableViewInterceptor.m; sourceTree = "<group>"; };
+		8F860B7417B0D39E00585265 /* WZCircularTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZCircularTableCell.m; path = Classes/WZCircularTableCell.m; sourceTree = "<group>"; };
+		8F860B7517B0D39E00585265 /* WZCircularTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZCircularTableView.h; path = Classes/WZCircularTableView.h; sourceTree = "<group>"; };
+		8F860B7617B0D39E00585265 /* WZCircularTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZCircularTableCell.h; path = Classes/WZCircularTableCell.h; sourceTree = "<group>"; };
+		8F860B7A17B0D48600585265 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8F860B7C17B0D4DA00585265 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		8F860B7D17B0D4DA00585265 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F860B4417B0D35300585265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F860B7B17B0D48600585265 /* QuartzCore.framework in Frameworks */,
+				8F860B4B17B0D35300585265 /* UIKit.framework in Frameworks */,
+				8F860B4D17B0D35300585265 /* Foundation.framework in Frameworks */,
+				8F860B4F17B0D35300585265 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F860B3E17B0D35300585265 = {
+			isa = PBXGroup;
+			children = (
+				8F860B7017B0D38F00585265 /* Classes */,
+				8F860B5017B0D35300585265 /* CircularTableViewSample */,
+				8F860B4917B0D35300585265 /* Frameworks */,
+				8F860B4817B0D35300585265 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8F860B4817B0D35300585265 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F860B4717B0D35300585265 /* CircularTableViewSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F860B4917B0D35300585265 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F860B7A17B0D48600585265 /* QuartzCore.framework */,
+				8F860B4A17B0D35300585265 /* UIKit.framework */,
+				8F860B4C17B0D35300585265 /* Foundation.framework */,
+				8F860B4E17B0D35300585265 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F860B5017B0D35300585265 /* CircularTableViewSample */ = {
+			isa = PBXGroup;
+			children = (
+				8F860B5917B0D35300585265 /* AppDelegate.h */,
+				8F860B5A17B0D35300585265 /* AppDelegate.m */,
+				8F860B6217B0D35300585265 /* MainStoryboard_iPhone.storyboard */,
+				8F860B7C17B0D4DA00585265 /* TableViewController.h */,
+				8F860B7D17B0D4DA00585265 /* TableViewController.m */,
+				8F860B6817B0D35300585265 /* ViewController.h */,
+				8F860B6917B0D35300585265 /* ViewController.m */,
+				8F860B5117B0D35300585265 /* Supporting Files */,
+			);
+			path = CircularTableViewSample;
+			sourceTree = "<group>";
+		};
+		8F860B5117B0D35300585265 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F860B5217B0D35300585265 /* CircularTableViewSample-Info.plist */,
+				8F860B5317B0D35300585265 /* InfoPlist.strings */,
+				8F860B5617B0D35300585265 /* main.m */,
+				8F860B5817B0D35300585265 /* CircularTableViewSample-Prefix.pch */,
+				8F860B5C17B0D35300585265 /* Default.png */,
+				8F860B5E17B0D35300585265 /* Default@2x.png */,
+				8F860B6017B0D35300585265 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F860B7017B0D38F00585265 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8F860B7517B0D39E00585265 /* WZCircularTableView.h */,
+				8F860B7117B0D39E00585265 /* WZCircularTableView.m */,
+				8F860B7217B0D39E00585265 /* WZCircularTableViewInterceptor.h */,
+				8F860B7317B0D39E00585265 /* WZCircularTableViewInterceptor.m */,
+				8F860B7417B0D39E00585265 /* WZCircularTableCell.m */,
+				8F860B7617B0D39E00585265 /* WZCircularTableCell.h */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F860B4617B0D35300585265 /* CircularTableViewSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F860B6D17B0D35300585265 /* Build configuration list for PBXNativeTarget "CircularTableViewSample" */;
+			buildPhases = (
+				8F860B4317B0D35300585265 /* Sources */,
+				8F860B4417B0D35300585265 /* Frameworks */,
+				8F860B4517B0D35300585265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CircularTableViewSample;
+			productName = CircularTableViewSample;
+			productReference = 8F860B4717B0D35300585265 /* CircularTableViewSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F860B3F17B0D35300585265 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = makoto_kw;
+			};
+			buildConfigurationList = 8F860B4217B0D35300585265 /* Build configuration list for PBXProject "CircularTableViewSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8F860B3E17B0D35300585265;
+			productRefGroup = 8F860B4817B0D35300585265 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F860B4617B0D35300585265 /* CircularTableViewSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F860B4517B0D35300585265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F860B5517B0D35300585265 /* InfoPlist.strings in Resources */,
+				8F860B5D17B0D35300585265 /* Default.png in Resources */,
+				8F860B5F17B0D35300585265 /* Default@2x.png in Resources */,
+				8F860B6117B0D35300585265 /* Default-568h@2x.png in Resources */,
+				8F860B6417B0D35300585265 /* MainStoryboard_iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F860B4317B0D35300585265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F860B5717B0D35300585265 /* main.m in Sources */,
+				8F860B5B17B0D35300585265 /* AppDelegate.m in Sources */,
+				8F860B6A17B0D35300585265 /* ViewController.m in Sources */,
+				8F860B7717B0D39E00585265 /* WZCircularTableView.m in Sources */,
+				8F860B7817B0D39E00585265 /* WZCircularTableViewInterceptor.m in Sources */,
+				8F860B7917B0D39E00585265 /* WZCircularTableCell.m in Sources */,
+				8F860B7E17B0D4DA00585265 /* TableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8F860B5317B0D35300585265 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F860B5417B0D35300585265 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8F860B6217B0D35300585265 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F860B6317B0D35300585265 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F860B6B17B0D35300585265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F860B6C17B0D35300585265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F860B6E17B0D35300585265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CircularTableViewSample/CircularTableViewSample-Prefix.pch";
+				INFOPLIST_FILE = "CircularTableViewSample/CircularTableViewSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8F860B6F17B0D35300585265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CircularTableViewSample/CircularTableViewSample-Prefix.pch";
+				INFOPLIST_FILE = "CircularTableViewSample/CircularTableViewSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F860B4217B0D35300585265 /* Build configuration list for PBXProject "CircularTableViewSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F860B6B17B0D35300585265 /* Debug */,
+				8F860B6C17B0D35300585265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F860B6D17B0D35300585265 /* Build configuration list for PBXNativeTarget "CircularTableViewSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F860B6E17B0D35300585265 /* Debug */,
+				8F860B6F17B0D35300585265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F860B3F17B0D35300585265 /* Project object */;
+}
