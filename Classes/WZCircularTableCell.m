@@ -11,8 +11,8 @@
 
 {
     UIColor *_borderColor;
-    UILabel *mCellTtleLabel;
-    CALayer *mImageLayer;
+    UILabel *_cellTtleLabel;
+    CALayer *_imageLayer;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -23,23 +23,20 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         // add the image layer
         self.contentView.backgroundColor = [UIColor clearColor];
-        mImageLayer                      = [CALayer layer];
-        mImageLayer.cornerRadius         = 16.0;
-        // mImageLayer.backgroundColor = [UIColor greenColor].CGColor;
-        //  mImageLayer.contents = (id)[UIImage imageNamed:@"2.png"].CGImage;
-        [self.contentView.layer addSublayer:mImageLayer];
+        _imageLayer                      = [CALayer layer];
+        _imageLayer.cornerRadius         = 16.0;
+        [self.contentView.layer addSublayer:_imageLayer];
         _borderColor            = [UIColor whiteColor];
-        mImageLayer.borderWidth = 4.0;
-        mImageLayer.borderColor = _borderColor.CGColor;
+        _imageLayer.borderWidth = 4.0;
+        _imageLayer.borderColor = _borderColor.CGColor;
         
         // the title label
-        mCellTtleLabel = [[UILabel alloc] initWithFrame:CGRectMake(44.0, 10.0, self.contentView.bounds.size.width - 44.0, 21.0)];
-        [self.contentView addSubview:mCellTtleLabel];
-        mCellTtleLabel.backgroundColor = [UIColor clearColor];
-        mCellTtleLabel.textColor       = [UIColor whiteColor];
-        mCellTtleLabel.shadowColor     = [UIColor blackColor];
-        mCellTtleLabel.shadowOffset    = CGSizeMake(1.f, 1.f);
-        //        mCellTtleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
+        _cellTtleLabel = [[UILabel alloc] initWithFrame:CGRectMake(44.0, 10.0, self.contentView.bounds.size.width - 44.0, 21.0)];
+        [self.contentView addSubview:_cellTtleLabel];
+        _cellTtleLabel.backgroundColor = [UIColor clearColor];
+        _cellTtleLabel.textColor       = [UIColor whiteColor];
+        _cellTtleLabel.shadowColor     = [UIColor blackColor];
+        _cellTtleLabel.shadowOffset    = CGSizeMake(1.f, 1.f);
     }
     
     return self;
@@ -51,28 +48,28 @@
     float imageY             = 4.0;
     float heightOfImageLayer = self.bounds.size.height - imageY * 2.0;
     heightOfImageLayer       = floorf(heightOfImageLayer);
-    mImageLayer.cornerRadius = heightOfImageLayer / 2.0f;
-    mImageLayer.frame        = CGRectMake(4.0, imageY, heightOfImageLayer, heightOfImageLayer);
-    mCellTtleLabel.frame     = CGRectMake(heightOfImageLayer + 10.0, floorf(heightOfImageLayer / 2.0 - (21 / 2.0f)) + 4.0, self.contentView.bounds.size.width - heightOfImageLayer + 10.0, 21.0);
+    _imageLayer.cornerRadius = heightOfImageLayer / 2.0f;
+    _imageLayer.frame        = CGRectMake(4.0, imageY, heightOfImageLayer, heightOfImageLayer);
+    _cellTtleLabel.frame     = CGRectMake(heightOfImageLayer + 10.0, floorf(heightOfImageLayer / 2.0 - (21 / 2.0f)) + 4.0, self.contentView.bounds.size.width - heightOfImageLayer + 10.0, 21.0);
 }
 
 - (void)setCellTitle:(NSString *)title
 {
-    mCellTtleLabel.text = title;
+    _cellTtleLabel.text = title;
 }
 
 - (void)setIcon:(UIImage *)image
 {
     [CATransaction begin];
     [CATransaction setAnimationDuration:0];
-    mImageLayer.contents = (id) image.CGImage;
+    _imageLayer.contents = (id)image.CGImage;
     [CATransaction commit];
 }
 
 - (void)setBorderColor:(UIColor *)color
 {
     _borderColor            = color;
-    mImageLayer.borderColor = color.CGColor;
+    _imageLayer.borderColor = color.CGColor;
 }
 
 - (void)setSelected:(BOOL)selected
@@ -83,8 +80,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-    mImageLayer.borderColor  = selected ? [UIColor orangeColor].CGColor : _borderColor.CGColor;
-    mCellTtleLabel.textColor = selected ? [UIColor orangeColor] : _borderColor;
+    _imageLayer.borderColor  = selected ? [UIColor orangeColor].CGColor : _borderColor.CGColor;
+    _cellTtleLabel.textColor = selected ? [UIColor orangeColor] : _borderColor;
 }
 
 @end

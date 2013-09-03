@@ -161,6 +161,12 @@
     }
 }
 
+- (void)clearBackground
+{
+    self.backgroundColor = [UIColor clearColor];
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

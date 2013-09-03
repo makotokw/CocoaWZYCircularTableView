@@ -18,4 +18,6 @@ typedef enum : NSInteger {
 @property (nonatomic, assign, getter = isInfiniteScrollingEnabled) BOOL enableInfiniteScrolling;
 @property (nonatomic, assign) WZCircularTableViewContentAlignment         contentAlignment;
 
+- (void)clearBackground;
+
 @end
