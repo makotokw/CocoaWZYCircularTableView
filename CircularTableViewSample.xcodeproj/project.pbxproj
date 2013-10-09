@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F743A6818053D3000C99705 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F743A6718053D3000C99705 /* RootViewController.m */; };
 		8F860B4B17B0D35300585265 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B4A17B0D35300585265 /* UIKit.framework */; };
 		8F860B4D17B0D35300585265 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B4C17B0D35300585265 /* Foundation.framework */; };
 		8F860B4F17B0D35300585265 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B4E17B0D35300585265 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F743A6618053D3000C99705 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		8F743A6718053D3000C99705 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8F860B4717B0D35300585265 /* CircularTableViewSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircularTableViewSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F860B4A17B0D35300585265 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8F860B4C17B0D35300585265 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,6 +106,8 @@
 				8F860B5917B0D35300585265 /* AppDelegate.h */,
 				8F860B5A17B0D35300585265 /* AppDelegate.m */,
 				8F860B6217B0D35300585265 /* MainStoryboard_iPhone.storyboard */,
+				8F743A6618053D3000C99705 /* RootViewController.h */,
+				8F743A6718053D3000C99705 /* RootViewController.m */,
 				8F860B7C17B0D4DA00585265 /* TableViewController.h */,
 				8F860B7D17B0D4DA00585265 /* TableViewController.m */,
 				8F860B6817B0D35300585265 /* ViewController.h */,
@@ -207,6 +212,7 @@
 			files = (
 				8F860B5717B0D35300585265 /* main.m in Sources */,
 				8F860B5B17B0D35300585265 /* AppDelegate.m in Sources */,
+				8F743A6818053D3000C99705 /* RootViewController.m in Sources */,
 				8F860B6A17B0D35300585265 /* ViewController.m in Sources */,
 				8F860B7717B0D39E00585265 /* WZCircularTableView.m in Sources */,
 				8F860B7817B0D39E00585265 /* WZCircularTableViewInterceptor.m in Sources */,
@@ -301,6 +307,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularTableViewSample/CircularTableViewSample-Prefix.pch";
 				INFOPLIST_FILE = "CircularTableViewSample/CircularTableViewSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -312,6 +319,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CircularTableViewSample/CircularTableViewSample-Prefix.pch";
 				INFOPLIST_FILE = "CircularTableViewSample/CircularTableViewSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

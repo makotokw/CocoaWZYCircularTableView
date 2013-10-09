@@ -16,7 +16,8 @@ typedef enum : NSInteger {
 @interface WZCircularTableView : UITableView
 
 @property (nonatomic, assign, getter = isInfiniteScrollingEnabled) BOOL enableInfiniteScrolling;
-@property (nonatomic, assign) WZCircularTableViewContentAlignment         contentAlignment;
+@property (nonatomic, assign) WZCircularTableViewContentAlignment contentAlignment;
+@property (nonatomic, assign) CGFloat radius;
 
 - (void)clearBackground;
 

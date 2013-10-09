@@ -1,23 +1,21 @@
 //
-//  TableViewController.m
+//  RootViewController.m
 //  CircularTableViewSample
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
+#import "RootViewController.h"
 #import "TableViewController.h"
-#import "WZCircularTableView.h"
-#import "WZCircularTableCell.h"
 
-@interface TableViewController ()
+@interface RootViewController ()
 
 @end
 
-@implementation TableViewController
+@implementation RootViewController
 
 {
     NSArray *_items;
-    IBOutlet WZCircularTableView *_circularTableView;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -39,15 +37,15 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSMutableArray *cells = [NSMutableArray array];    
-    for (NSInteger i = 0; i < 10; i++) {
-        [cells addObject:[NSString stringWithFormat:@"%d", i]];
-    }
-    _items = cells;
-
-    _circularTableView.radius = _radius;
-    _circularTableView.enableInfiniteScrolling = _enableInfiniteScrolling;
-    _circularTableView.contentAlignment = _contentAlignment;
+    self.title = @"CircularTableView";
+    
+    _items = @[
+                @{@"title": @"Normal"},
+                @{@"title": @"Circler"},
+                @{@"title": @"LeftAlign"},
+                @{@"title": @"RightAlign"},
+                @{@"title": @"ShortRadius"},
+                ];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,17 +63,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _items.count;;
+    return _items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    WZCircularTableCell *cell = (WZCircularTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
-    cell.textLabel.text = _items[indexPath.row];
+    NSDictionary *item = _items[indexPath.row];
+    cell.textLabel.text = item[@"title"];
     
     return cell;
 }
@@ -119,17 +117,46 @@
 }
 */
 
+/*
+#pragma mark - Navigation
+
+// In a story board-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+
+ */
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */    
+    TableViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"circularTableViewController"];
+    
+    NSDictionary *item = _items[indexPath.row];
+    
+    viewController.title = item[@"title"];
+    switch (indexPath.row) {
+        case 1:
+            viewController.enableInfiniteScrolling = YES;
+            break;
+        case 2:
+            viewController.enableInfiniteScrolling = YES;
+            viewController.contentAlignment = WZCircularTableViewContentAlignmentLeft;
+            break;
+        case 3:
+            viewController.enableInfiniteScrolling = YES;
+            viewController.contentAlignment = WZCircularTableViewContentAlignmentRight;
+            break;
+        case 4:
+            viewController.enableInfiniteScrolling = YES;
+            viewController.contentAlignment = WZCircularTableViewContentAlignmentLeft;
+            viewController.radius = 120;
+            break;
+    }
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

@@ -10,6 +10,8 @@
 
 @interface TableViewController : UITableViewController
 
+@property (nonatomic, assign, getter = isInfiniteScrollingEnabled) BOOL enableInfiniteScrolling;
 @property (nonatomic, assign) WZCircularTableViewContentAlignment contentAlignment;
+@property (nonatomic, assign) CGFloat radius;
 
 @end

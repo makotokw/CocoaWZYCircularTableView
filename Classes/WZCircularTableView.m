@@ -12,7 +12,6 @@
 
 {
     WZCircularTableViewInterceptor *_dataSourceInterceptor;
-    NSInteger _totalCellsVisible;
     NSInteger _repeatCount;
     NSInteger _totalRows;
     BOOL _enableInfiniteScrolling;
@@ -47,7 +46,6 @@
     if (self) {
         [self customIntitialization];
     }
-    
     return self;
 }
 
@@ -60,6 +58,8 @@
 {
     _repeatCount = 0;
     _contentAlignment = WZCircularTableViewContentAlignmentNone;
+    _radius = 0.0f;
+    
     self.enableInfiniteScrolling = YES;
     self.showsVerticalScrollIndicator = NO;
 }
@@ -78,9 +78,7 @@
 }
 
 - (void)layoutSubviews
-{
-    _totalCellsVisible = ceil(self.frame.size.height / self.rowHeight);    
-    
+{    
     [self resetContentOffsetIfNeeded];
     [super layoutSubviews];
 
@@ -130,21 +128,31 @@
 {
     NSArray   *indexPaths        = [self indexPathsForVisibleRows];
     NSUInteger totalVisibleCells = [indexPaths count];
-        
-    CGFloat viewHalfHeight = self.frame.size.height / 2.0f;
+    
+    CGFloat viewHalfHeight = (self.frame.size.height) / 2.0f;
+    CGFloat yCenterOffset = self.contentInset.top + (self.frame.size.height - self.contentInset.top - self.contentInset.bottom) / 2.0f;
     
     CGFloat vRadius = (self.frame.size.height);
     CGFloat hRadius = (self.frame.size.width);
     
-    CGFloat yRadius = viewHalfHeight + ( self.rowHeight / 2.0f );
+    CGFloat yRadius = viewHalfHeight + ( self.rowHeight );
     CGFloat xRadius  = (vRadius <  hRadius) ? vRadius : hRadius;
-    
+    if (self.radius > 0 && isfinite(self.radius)) {
+        xRadius = self.radius;
+    }
+
     for (NSUInteger index = 0; index < totalVisibleCells; index++) {
 
-        UITableViewCell *cell  = (UITableViewCell *) [self cellForRowAtIndexPath:[indexPaths objectAtIndex:index]];
+        NSIndexPath * indexPath = [indexPaths objectAtIndex:index];
+        UITableViewCell *cell  = (UITableViewCell *) [self cellForRowAtIndexPath:indexPath];
         CGRect           frame = cell.frame;
-                
-        CGFloat y = MIN(ABS(viewHalfHeight - (frame.origin.y - self.contentOffset.y + (self.rowHeight / 2.0f))), yRadius);        
+        
+        CGFloat rowHeight = self.rowHeight;
+        if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+            rowHeight = [self.delegate tableView:self heightForRowAtIndexPath:indexPath];
+        }
+        
+        CGFloat y = MIN(ABS(yCenterOffset - (frame.origin.y - self.contentOffset.y + (rowHeight / 2.0f))), yRadius);
         CGFloat angle = asinf(y / yRadius);
         CGFloat x = xRadius * cosf(angle);
 
