@@ -1,5 +1,10 @@
-WZCircularTableView
+WZCircularTableView for iOS
 =====
+
+The Circular TableView for iOS.
+
+[![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/1-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/1.png)
+[![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/2-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/2.png)
 
 ## Requirements
 

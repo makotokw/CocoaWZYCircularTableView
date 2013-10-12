@@ -17,6 +17,8 @@
     BOOL _enableInfiniteScrolling;
 }
 
+@synthesize reloadCompletionHandler = _reloadCompletionHandler;
+@synthesize layoutCompletionHandler = _layoutCompletionHandler;
 @dynamic enableInfiniteScrolling;
 @synthesize contentAlignment = _contentAlignment;
 
@@ -77,16 +79,6 @@
     }
 }
 
-- (void)layoutSubviews
-{    
-    [self resetContentOffsetIfNeeded];
-    [super layoutSubviews];
-
-    if (WZCircularTableViewContentAlignmentNone != _contentAlignment) {
-        [self layoutVisibleCells];
-    }
-}
-
 - (void)setDataSource:(id<UITableViewDataSource>)dataSource
 {
     if (!_dataSourceInterceptor) {
@@ -97,6 +89,25 @@
     _dataSourceInterceptor.middleReceiver = self;
     
     [super setDataSource:(id<UITableViewDataSource>)_dataSourceInterceptor];
+}
+
+- (BOOL)scrollFirstCellToCenter
+{
+    if (!_enableInfiniteScrolling || _repeatCount < 2) {
+        return NO;
+    }
+    
+    if (self.contentSize.height == 0
+        || self.contentSize.height <= self.bounds.size.height) {
+        return NO;
+    }
+    
+    CGPoint contentOffset = self.contentOffset;
+    CGFloat contentHeightPerUnit = self.contentSize.height / _repeatCount;
+    contentOffset.y = contentHeightPerUnit - self.contentCenterInsetTop + (self.rowHeight / 2);
+    [self setContentOffset:contentOffset];
+    
+    return YES;
 }
 
 - (void)resetContentOffsetIfNeeded
@@ -112,9 +123,9 @@
     
     CGPoint contentOffset = self.contentOffset;
     CGFloat contentHeightPerUnit = self.contentSize.height / _repeatCount;
-    
+
     if (contentOffset.y <= 0.0) {
-        contentOffset.y += contentHeightPerUnit;
+        contentOffset.y = contentHeightPerUnit;
     }
     else if (contentOffset.y >= (self.contentSize.height - self.bounds.size.height)) {
         while (contentOffset.y > contentHeightPerUnit) {
@@ -124,55 +135,127 @@
     [self setContentOffset:contentOffset];
 }
 
+- (UITableViewCell*)cellAtCenter
+{
+    return [self cellForRowAtIndexPath:self.indexPathAtCenter];
+}
+
+- (NSIndexPath *)indexPathAtCenter
+{
+    return [self indexPathForRowAtPoint:self.contentCenter];
+}
+
+- (CGFloat)contentCenterInsetTop
+{
+    return self.contentInset.top + (self.frame.size.height - self.contentInset.top - self.contentInset.bottom) / 2.0f;
+}
+
+- (CGPoint)contentCenter
+{
+    return CGPointMake(
+                       self.frame.size.width / 2,
+                       self.contentOffset.y + self.contentCenterInsetTop
+                       );
+}
+
+- (CGPoint)contentCenterInFrame
+{
+    return CGPointMake(
+                       self.frame.size.width / 2,
+                       self.contentCenterInsetTop
+                       );
+}
+
 - (void)layoutVisibleCells
 {
     NSArray   *indexPaths        = [self indexPathsForVisibleRows];
     NSUInteger totalVisibleCells = [indexPaths count];
     
-    CGFloat viewHalfHeight = (self.frame.size.height) / 2.0f;
-    CGFloat yCenterOffset = self.contentInset.top + (self.frame.size.height - self.contentInset.top - self.contentInset.bottom) / 2.0f;
-    
-    CGFloat vRadius = (self.frame.size.height);
-    CGFloat hRadius = (self.frame.size.width);
-    
-    CGFloat yRadius = viewHalfHeight + ( self.rowHeight );
-    CGFloat xRadius  = (vRadius <  hRadius) ? vRadius : hRadius;
-    if (self.radius > 0 && isfinite(self.radius)) {
-        xRadius = self.radius;
-    }
-
-    for (NSUInteger index = 0; index < totalVisibleCells; index++) {
-
-        NSIndexPath * indexPath = [indexPaths objectAtIndex:index];
-        UITableViewCell *cell  = (UITableViewCell *) [self cellForRowAtIndexPath:indexPath];
-        CGRect           frame = cell.frame;
+    if (WZCircularTableViewContentAlignmentNone != _contentAlignment) {
         
-        CGFloat rowHeight = self.rowHeight;
-        if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
-            rowHeight = [self.delegate tableView:self heightForRowAtIndexPath:indexPath];
+        CGPoint contentCenterInFrame = self.contentCenterInFrame;
+        CGFloat viewHalfHeight = (self.frame.size.height) / 2.0f;
+        
+        CGFloat vRadius = (self.frame.size.height);
+        CGFloat hRadius = (self.frame.size.width);
+        
+        CGFloat yRadius = viewHalfHeight + ( self.rowHeight );
+        CGFloat xRadius  = (vRadius <  hRadius) ? vRadius : hRadius;
+        if (self.radius > 0 && isfinite(self.radius)) {
+            xRadius = self.radius;
         }
-        
-        CGFloat y = MIN(ABS(yCenterOffset - (frame.origin.y - self.contentOffset.y + (rowHeight / 2.0f))), yRadius);
-        CGFloat angle = asinf(y / yRadius);
-        CGFloat x = xRadius * cosf(angle);
 
-        if (_contentAlignment == WZCircularTableViewContentAlignmentLeft) {
-            x = xRadius  - x;
-        } else {
-            x = x - xRadius / 2;
+        for (NSUInteger index = 0; index < totalVisibleCells; index++) {
+
+            NSIndexPath * indexPath = [indexPaths objectAtIndex:index];
+            UITableViewCell *cell  = (UITableViewCell *) [self cellForRowAtIndexPath:indexPath];
+            CGRect           frame = cell.frame;
+            
+            CGFloat rowHeight = self.rowHeight;
+            if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+                rowHeight = [self.delegate tableView:self heightForRowAtIndexPath:indexPath];
+            }
+            
+            CGFloat y = MIN(ABS(contentCenterInFrame.y - (frame.origin.y - self.contentOffset.y + (rowHeight / 2.0f))), yRadius);
+            CGFloat angle = asinf(y / yRadius);
+            CGFloat x = xRadius * cosf(angle);
+
+            if (_contentAlignment == WZCircularTableViewContentAlignmentLeft) {
+                x = xRadius  - x;
+            } else {
+                x = x - xRadius / 2;
+            }
+            
+            if (!isnan(x)) {
+                frame.origin.x = x;
+                cell.frame = frame;
+            }
         }
-        
-        if (!isnan(x)) {
-            frame.origin.x = x;
+    } else {
+        for (NSUInteger index = 0; index < totalVisibleCells; index++) {
+            NSIndexPath * indexPath = [indexPaths objectAtIndex:index];
+            UITableViewCell *cell  = (UITableViewCell *) [self cellForRowAtIndexPath:indexPath];
+            CGRect           frame = cell.frame;
+            
+            frame.origin.x = 0;
             cell.frame = frame;
         }
     }
+    
+    if (_layoutCompletionHandler) {
+        _layoutCompletionHandler();
+    }
+}
+
+- (void)layoutSubviews
+{
+    [self resetContentOffsetIfNeeded];
+    [super layoutSubviews];
+    [self layoutVisibleCells];
 }
 
 - (void)clearBackground
 {
     self.backgroundColor = [UIColor clearColor];
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+- (void)reloadData
+{
+    [super reloadData];
+    
+    if (_reloadCompletionHandler) {
+        _reloadCompletionHandler();
+    }
+}
+
+-(void)reloadData:(WZCircularTableViewCompletionHander)completionHander
+{
+    [self reloadData];
+    
+    if (completionHander){
+        completionHander();
+    }
 }
 
 #pragma mark UITableViewDataSource

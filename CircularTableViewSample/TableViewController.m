@@ -48,6 +48,19 @@
     _circularTableView.radius = _radius;
     _circularTableView.enableInfiniteScrolling = _enableInfiniteScrolling;
     _circularTableView.contentAlignment = _contentAlignment;
+    
+    __weak WZCircularTableView *tableView = _circularTableView;
+    _circularTableView.reloadCompletionHandler = ^() {
+        [tableView scrollFirstCellToCenter];
+    };
+    
+    _circularTableView.layoutCompletionHandler = ^() {
+        UITableViewCell *centralCell = tableView.cellAtCenter;
+        for (UITableViewCell *cell in tableView.visibleCells) {
+            cell.textLabel.textColor = [UIColor blackColor];
+        }
+        centralCell.textLabel.textColor = [UIColor blueColor];
+    };
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _items.count;;
+    return _items.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
