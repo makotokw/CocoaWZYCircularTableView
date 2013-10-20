@@ -6,6 +6,14 @@ The Circular TableView for iOS.
 [![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/1-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/1.png)
 [![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/2-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/2.png)
 
+Android Version: [AndroidWZCircularListView](https://github.com/makotokw/AndroidWZCircularListView)
+
+## Installation
+
+```ruby
+pod 'WZCircularTableView', :git => 'https://github.com/makotokw/CocoaWZCircularTableView.git'
+```
+
 ## Requirements
 
 WZCircleTableView requires iOS 5 or later. Also, it is deployed for an ARC environment.
