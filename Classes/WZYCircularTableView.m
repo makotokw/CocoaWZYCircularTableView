@@ -1,17 +1,17 @@
 //
-//  WZCircularTableView.m
-//  WZCircularTableView
+//  WZYCircularTableView.m
+//  WZYCircularTableView
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
-#import "WZCircularTableView.h"
-#import "WZCircularTableViewInterceptor.h"
+#import "WZYCircularTableView.h"
+#import "WZYCircularTableViewInterceptor.h"
 
-@implementation WZCircularTableView
+@implementation WZYCircularTableView
 
 {
-    WZCircularTableViewInterceptor *_dataSourceInterceptor;
+    WZYCircularTableViewInterceptor *_dataSourceInterceptor;
     NSInteger _repeatCount;
     NSInteger _totalRows;
     BOOL _enableInfiniteScrolling;
@@ -59,7 +59,7 @@
 - (void)customIntitialization
 {
     _repeatCount = 0;
-    _contentAlignment = WZCircularTableViewContentAlignmentNone;
+    _contentAlignment = WZYCircularTableViewContentAlignmentNone;
     _radius = 0.0f;
     
     self.enableInfiniteScrolling = YES;
@@ -82,7 +82,7 @@
 - (void)setDataSource:(id<UITableViewDataSource>)dataSource
 {
     if (!_dataSourceInterceptor) {
-        _dataSourceInterceptor = [[WZCircularTableViewInterceptor alloc] init];
+        _dataSourceInterceptor = [[WZYCircularTableViewInterceptor alloc] init];
     }
     
     _dataSourceInterceptor.receiver  = dataSource;
@@ -171,7 +171,7 @@
     NSArray   *indexPaths        = [self indexPathsForVisibleRows];
     NSUInteger totalVisibleCells = [indexPaths count];
     
-    if (WZCircularTableViewContentAlignmentNone != _contentAlignment) {
+    if (WZYCircularTableViewContentAlignmentNone != _contentAlignment) {
         
         CGPoint contentCenterInFrame = self.contentCenterInFrame;
         CGFloat viewHalfHeight = (self.frame.size.height) / 2.0f;
@@ -200,7 +200,7 @@
             CGFloat angle = asinf(y / yRadius);
             CGFloat x = xRadius * cosf(angle);
 
-            if (_contentAlignment == WZCircularTableViewContentAlignmentLeft) {
+            if (_contentAlignment == WZYCircularTableViewContentAlignmentLeft) {
                 x = xRadius  - x;
             } else {
                 x = x - xRadius / 2;
@@ -249,7 +249,7 @@
     }
 }
 
--(void)reloadData:(WZCircularTableViewCompletionHander)completionHander
+-(void)reloadData:(WZYCircularTableViewCompletionHander)completionHander
 {
     [self reloadData];
     

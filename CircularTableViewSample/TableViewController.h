@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WZCircularTableView.h"
+#import "WZYCircularTableView.h"
 
 @interface TableViewController : UITableViewController
 
 @property (nonatomic, assign, getter = isInfiniteScrollingEnabled) BOOL enableInfiniteScrolling;
-@property (nonatomic, assign) WZCircularTableViewContentAlignment contentAlignment;
+@property (nonatomic, assign) WZYCircularTableViewContentAlignment contentAlignment;
 @property (nonatomic, assign) CGFloat radius;
 
 @end

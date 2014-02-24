@@ -1,13 +1,13 @@
 //
-//  WZCircularTableCell.m
-//  WZCircularTableView
+//  WZYCircularTableCell.m
+//  WZYCircularTableView
 //
 //  Copyright (c) 2013 makoto_kw Inc. All rights reserved.
 //
 
-#import "WZCircularTableCell.h"
+#import "WZYCircularTableCell.h"
 
-@implementation WZCircularTableCell
+@implementation WZYCircularTableCell
 
 {
     UIColor *_borderColor;

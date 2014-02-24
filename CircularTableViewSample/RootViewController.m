@@ -144,15 +144,15 @@
             break;
         case 2:
             viewController.enableInfiniteScrolling = YES;
-            viewController.contentAlignment = WZCircularTableViewContentAlignmentLeft;
+            viewController.contentAlignment = WZYCircularTableViewContentAlignmentLeft;
             break;
         case 3:
             viewController.enableInfiniteScrolling = YES;
-            viewController.contentAlignment = WZCircularTableViewContentAlignmentRight;
+            viewController.contentAlignment = WZYCircularTableViewContentAlignmentRight;
             break;
         case 4:
             viewController.enableInfiniteScrolling = YES;
-            viewController.contentAlignment = WZCircularTableViewContentAlignmentLeft;
+            viewController.contentAlignment = WZYCircularTableViewContentAlignmentLeft;
             viewController.radius = 120;
             break;
     }

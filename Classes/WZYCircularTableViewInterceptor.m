@@ -1,13 +1,13 @@
 //
-//  WZCircularTableViewInterceptor.m
-//  WZCircularTableView
+//  WZYCircularTableViewInterceptor.m
+//  WZYCircularTableView
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
-#import "WZCircularTableViewInterceptor.h"
+#import "WZYCircularTableViewInterceptor.h"
 
-@implementation WZCircularTableViewInterceptor
+@implementation WZYCircularTableViewInterceptor
 
 @synthesize receiver       = _receiver;
 @synthesize middleReceiver = _middleReceiver;

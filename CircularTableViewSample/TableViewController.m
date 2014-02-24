@@ -6,8 +6,8 @@
 //
 
 #import "TableViewController.h"
-#import "WZCircularTableView.h"
-#import "WZCircularTableCell.h"
+#import "WZYCircularTableView.h"
+#import "WZYCircularTableCell.h"
 
 @interface TableViewController ()
 
@@ -17,7 +17,7 @@
 
 {
     NSArray *_items;
-    IBOutlet WZCircularTableView *_circularTableView;
+    IBOutlet WZYCircularTableView *_circularTableView;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -49,7 +49,7 @@
     _circularTableView.enableInfiniteScrolling = _enableInfiniteScrolling;
     _circularTableView.contentAlignment = _contentAlignment;
     
-    __weak WZCircularTableView *tableView = _circularTableView;
+    __weak WZYCircularTableView *tableView = _circularTableView;
     _circularTableView.reloadCompletionHandler = ^() {
         [tableView scrollFirstCellToCenter];
     };
@@ -84,7 +84,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    WZCircularTableCell *cell = (WZCircularTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    WZYCircularTableCell *cell = (WZYCircularTableCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     

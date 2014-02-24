@@ -19,11 +19,11 @@
 		8F860B6117B0D35300585265 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F860B6017B0D35300585265 /* Default-568h@2x.png */; };
 		8F860B6417B0D35300585265 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F860B6217B0D35300585265 /* MainStoryboard_iPhone.storyboard */; };
 		8F860B6A17B0D35300585265 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B6917B0D35300585265 /* ViewController.m */; };
-		8F860B7717B0D39E00585265 /* WZCircularTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7117B0D39E00585265 /* WZCircularTableView.m */; };
-		8F860B7817B0D39E00585265 /* WZCircularTableViewInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7317B0D39E00585265 /* WZCircularTableViewInterceptor.m */; };
-		8F860B7917B0D39E00585265 /* WZCircularTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7417B0D39E00585265 /* WZCircularTableCell.m */; };
 		8F860B7B17B0D48600585265 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F860B7A17B0D48600585265 /* QuartzCore.framework */; };
 		8F860B7E17B0D4DA00585265 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F860B7D17B0D4DA00585265 /* TableViewController.m */; };
+		8FFB40A718BAF6A6009F33FB /* WZYCircularTableViewInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB40A118BAF6A6009F33FB /* WZYCircularTableViewInterceptor.m */; };
+		8FFB40A818BAF6A6009F33FB /* WZYCircularTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB40A318BAF6A6009F33FB /* WZYCircularTableView.m */; };
+		8FFB40A918BAF6A6009F33FB /* WZYCircularTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB40A518BAF6A6009F33FB /* WZYCircularTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,15 +45,15 @@
 		8F860B6317B0D35300585265 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		8F860B6817B0D35300585265 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8F860B6917B0D35300585265 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8F860B7117B0D39E00585265 /* WZCircularTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZCircularTableView.m; path = Classes/WZCircularTableView.m; sourceTree = "<group>"; };
-		8F860B7217B0D39E00585265 /* WZCircularTableViewInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZCircularTableViewInterceptor.h; path = Classes/WZCircularTableViewInterceptor.h; sourceTree = "<group>"; };
-		8F860B7317B0D39E00585265 /* WZCircularTableViewInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZCircularTableViewInterceptor.m; path = Classes/WZCircularTableViewInterceptor.m; sourceTree = "<group>"; };
-		8F860B7417B0D39E00585265 /* WZCircularTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZCircularTableCell.m; path = Classes/WZCircularTableCell.m; sourceTree = "<group>"; };
-		8F860B7517B0D39E00585265 /* WZCircularTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZCircularTableView.h; path = Classes/WZCircularTableView.h; sourceTree = "<group>"; };
-		8F860B7617B0D39E00585265 /* WZCircularTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZCircularTableCell.h; path = Classes/WZCircularTableCell.h; sourceTree = "<group>"; };
 		8F860B7A17B0D48600585265 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8F860B7C17B0D4DA00585265 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		8F860B7D17B0D4DA00585265 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8FFB40A118BAF6A6009F33FB /* WZYCircularTableViewInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZYCircularTableViewInterceptor.m; path = Classes/WZYCircularTableViewInterceptor.m; sourceTree = "<group>"; };
+		8FFB40A218BAF6A6009F33FB /* WZYCircularTableViewInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZYCircularTableViewInterceptor.h; path = Classes/WZYCircularTableViewInterceptor.h; sourceTree = "<group>"; };
+		8FFB40A318BAF6A6009F33FB /* WZYCircularTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZYCircularTableView.m; path = Classes/WZYCircularTableView.m; sourceTree = "<group>"; };
+		8FFB40A418BAF6A6009F33FB /* WZYCircularTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZYCircularTableView.h; path = Classes/WZYCircularTableView.h; sourceTree = "<group>"; };
+		8FFB40A518BAF6A6009F33FB /* WZYCircularTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZYCircularTableCell.m; path = Classes/WZYCircularTableCell.m; sourceTree = "<group>"; };
+		8FFB40A618BAF6A6009F33FB /* WZYCircularTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZYCircularTableCell.h; path = Classes/WZYCircularTableCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,12 +134,12 @@
 		8F860B7017B0D38F00585265 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8F860B7517B0D39E00585265 /* WZCircularTableView.h */,
-				8F860B7117B0D39E00585265 /* WZCircularTableView.m */,
-				8F860B7217B0D39E00585265 /* WZCircularTableViewInterceptor.h */,
-				8F860B7317B0D39E00585265 /* WZCircularTableViewInterceptor.m */,
-				8F860B7417B0D39E00585265 /* WZCircularTableCell.m */,
-				8F860B7617B0D39E00585265 /* WZCircularTableCell.h */,
+				8FFB40A118BAF6A6009F33FB /* WZYCircularTableViewInterceptor.m */,
+				8FFB40A218BAF6A6009F33FB /* WZYCircularTableViewInterceptor.h */,
+				8FFB40A318BAF6A6009F33FB /* WZYCircularTableView.m */,
+				8FFB40A418BAF6A6009F33FB /* WZYCircularTableView.h */,
+				8FFB40A518BAF6A6009F33FB /* WZYCircularTableCell.m */,
+				8FFB40A618BAF6A6009F33FB /* WZYCircularTableCell.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -210,13 +210,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFB40A918BAF6A6009F33FB /* WZYCircularTableCell.m in Sources */,
 				8F860B5717B0D35300585265 /* main.m in Sources */,
+				8FFB40A718BAF6A6009F33FB /* WZYCircularTableViewInterceptor.m in Sources */,
 				8F860B5B17B0D35300585265 /* AppDelegate.m in Sources */,
 				8F743A6818053D3000C99705 /* RootViewController.m in Sources */,
 				8F860B6A17B0D35300585265 /* ViewController.m in Sources */,
-				8F860B7717B0D39E00585265 /* WZCircularTableView.m in Sources */,
-				8F860B7817B0D39E00585265 /* WZCircularTableViewInterceptor.m in Sources */,
-				8F860B7917B0D39E00585265 /* WZCircularTableCell.m in Sources */,
+				8FFB40A818BAF6A6009F33FB /* WZYCircularTableView.m in Sources */,
 				8F860B7E17B0D4DA00585265 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

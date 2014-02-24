@@ -1,17 +1,17 @@
-WZCircularTableView for iOS
+WZYCircularTableView for iOS
 =====
 
 The Circular TableView for iOS.
 
-[![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/1-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/1.png)
-[![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/2-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZCircularTableView/2.png)
+[![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZYCircularTableView/1-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZYCircularTableView/1.png)
+[![](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZYCircularTableView/2-thumb.png)](https://dl.dropboxusercontent.com/u/8932138/screenshot/CocoaWZYCircularTableView/2.png)
 
-Android Version: [AndroidWZCircularListView](https://github.com/makotokw/AndroidWZCircularListView)
+Android Version: [AndroidWZYCircularListView](https://github.com/makotokw/AndroidWZYCircularListView)
 
 ## Installation
 
 ```ruby
-pod 'WZCircularTableView', :git => 'https://github.com/makotokw/CocoaWZCircularTableView.git'
+pod 'WZYCircularTableView', :git => 'https://github.com/makotokw/CocoaWZYCircularTableView.git'
 ```
 
 ## Requirements
@@ -22,4 +22,4 @@ WZCircleTableView requires iOS 5 or later. Also, it is deployed for an ARC envir
 
 The MIT License (MIT)  
 
-WZCircularTableView is inspired by [UITableViewTricks](https://github.com/bharath2020/UITableViewTricks) and [uitableview-tricks-part-2-infinite-scrolling](https://iphone2020.wordpress.com/2012/10/01/uitableview-tricks-part-2-infinite-scrolling/)
+WZYCircularTableView is inspired by [UITableViewTricks](https://github.com/bharath2020/UITableViewTricks) and [uitableview-tricks-part-2-infinite-scrolling](https://iphone2020.wordpress.com/2012/10/01/uitableview-tricks-part-2-infinite-scrolling/)
