@@ -7,11 +7,11 @@
 
 #import <UIKit/UIKit.h>
 
-typedef enum : NSInteger {
+typedef NS_ENUM(NSInteger, WZYCircularTableViewContentAlignment) {
     WZYCircularTableViewContentAlignmentNone,
     WZYCircularTableViewContentAlignmentLeft,
     WZYCircularTableViewContentAlignmentRight
-} WZYCircularTableViewContentAlignment;
+};
 
 typedef void (^WZYCircularTableViewCompletionHander)();
 
@@ -24,8 +24,9 @@ typedef void (^WZYCircularTableViewCompletionHander)();
 @property (nonatomic, assign) WZYCircularTableViewContentAlignment contentAlignment;
 @property (nonatomic, assign) CGFloat radius;
 
-- (UITableViewCell*)cellAtCenter;
-- (NSIndexPath*)indexPathAtCenter;
+- (UITableViewCell *)cellAtCenter;
+- (NSIndexPath *)indexPathAtCenter;
+- (NSArray *)cellsAtRow:(NSInteger)row;
 - (BOOL)scrollFirstCellToCenter;
 - (void)clearBackground;
 

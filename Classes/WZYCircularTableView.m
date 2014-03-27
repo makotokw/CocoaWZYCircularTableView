@@ -13,14 +13,11 @@
 {
     WZYCircularTableViewInterceptor *_dataSourceInterceptor;
     NSInteger _repeatCount;
-    NSInteger _totalRows;
+    NSInteger _numberOfDataSourceRows;
     BOOL _enableInfiniteScrolling;
 }
 
-@synthesize reloadCompletionHandler = _reloadCompletionHandler;
-@synthesize layoutCompletionHandler = _layoutCompletionHandler;
 @dynamic enableInfiniteScrolling;
-@synthesize contentAlignment = _contentAlignment;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -135,7 +132,22 @@
     [self setContentOffset:contentOffset];
 }
 
-- (UITableViewCell*)cellAtCenter
+- (NSArray *)cellsAtRow:(NSInteger)row
+{
+    NSMutableArray *cells = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < _repeatCount; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(row + i * _numberOfDataSourceRows) inSection:0];
+        UITableViewCell *cell = [self cellForRowAtIndexPath:indexPath];
+        if (cell) {
+            [cells addObject:cell];
+        }
+    }
+    
+    return cells;
+}
+
+- (UITableViewCell *)cellAtCenter
 {
     return [self cellForRowAtIndexPath:self.indexPathAtCenter];
 }
@@ -262,23 +274,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    _totalRows = [_dataSourceInterceptor.receiver tableView:tableView numberOfRowsInSection:section];
+    _numberOfDataSourceRows = [_dataSourceInterceptor.receiver tableView:tableView numberOfRowsInSection:section];
     
     _repeatCount = 1;
     if (_enableInfiniteScrolling) {
         NSInteger _visibledRows = ceil(self.frame.size.height / self.rowHeight);
-        if (_totalRows * 2 > _visibledRows) {
+        if (_numberOfDataSourceRows * 2 > _visibledRows) {
             _repeatCount = 3;
         }
     }            
-    return _totalRows * _repeatCount;
+    return _numberOfDataSourceRows * _repeatCount;
    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_totalRows > 0) {
-        NSIndexPath *morphedIndexPath = _enableInfiniteScrolling ? [NSIndexPath indexPathForRow:indexPath.row % _totalRows inSection:indexPath.section] : indexPath;
+    if (_numberOfDataSourceRows > 0) {
+        NSIndexPath *morphedIndexPath = _enableInfiniteScrolling ? [NSIndexPath indexPathForRow:indexPath.row % _numberOfDataSourceRows inSection:indexPath.section] : indexPath;
         return [_dataSourceInterceptor.receiver tableView:tableView cellForRowAtIndexPath:morphedIndexPath];
     }
     return [_dataSourceInterceptor.receiver tableView:tableView cellForRowAtIndexPath:indexPath];
